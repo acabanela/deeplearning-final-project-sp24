@@ -1,11 +1,9 @@
 import streamlit as st
-import numpy as np
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
 import torchvision.models as models
 from PIL import Image
-import cv2
 
 # Load the PyTorch model
 model_path = './vit_v1_model.pth'
@@ -19,14 +17,6 @@ model.heads.head = nn.Linear(model.heads.head.in_features, num_classes)
 checkpoint = torch.load(model_path)
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
-
-# Define the preprocessing steps
-transform = transforms.Compose([
-    transforms.Resize((256, 256)),  # Resize images to 256x256
-    transforms.ToTensor(),  # Convert images to PyTorch tensors
-    transforms.Normalize(mean=[0.43613595, 0.4974372, 0.3781651],
-                         std=[0.21189487, 0.22010513, 0.21154968]),  # Normalize using mean and std
-])
 
 class_info = {
     0: {
@@ -81,7 +71,7 @@ uploaded_file = st.file_uploader("Upload a leaf image from a corn crop below:", 
 
 # Sidebar
 with st.sidebar:
-    st.subheader("About the Uploaded Leaf")
+    st.header("Diagnosis of the Uploaded Leaf")
     if uploaded_file is None:
         st.write("No information to show yet.\n\nUpload an image of a corn crop leaf on the right to get started! 👉 ")
     else:
@@ -89,6 +79,8 @@ with st.sidebar:
         image = Image.open(uploaded_file)
         image = image.resize((224, 224), Image.BILINEAR)  # Resize using linear interpolation
         image = transforms.ToTensor()(image)
+        image = transforms.Normalize(mean=[0.43613595, 0.4974372, 0.3781651],
+                         std=[0.21189487, 0.22010513, 0.21154968])(image)
 
         # Run model inference
         with torch.no_grad():
@@ -120,4 +112,5 @@ with st.sidebar:
                 st.write(value)
 
 if uploaded_file is not None:
-    st.image(uploaded_file, caption='Uploaded Crop Image', width=300)
+    st.image(uploaded_file, caption='Uploaded Leaf Image', width=300)
+
