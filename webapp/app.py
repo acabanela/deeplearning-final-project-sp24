@@ -18,6 +18,7 @@ checkpoint = torch.load(model_path)
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
+# Load disease info from PlantVillage Corn-Maize webpage
 class_info = {
     0: {
         'Name': 'Cercospora leaf spot (Gray leaf spot)',
