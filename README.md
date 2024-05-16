@@ -1,30 +1,31 @@
 # Deep Learning Final Project: Plant Disease Image Classification of Corn Crop Leaves
-## About the notebooks and data:
-* `Amadeo_EDA_Preprocessing_Corn.ipynb` - EDA and preprocessing techniques applied, code for saving preprocesed data to numpy files
-* `Amadeo_Baseline_Corn.ipynb` - simple neural network baseline model using data loaded from numpy files
-* Where the data is located
-  * I have given everyone access to the google drive folder "634_Deep_Learning_Project_Shared".
-  * The raw data we're using for EDA and preprocessing is in the `/data/raw_data/color_corn/` folder.
-  * **The preprocessed data we're using for model building** is in the `/data/preprocessed_data/color_corn/` folder. Please use this when training your models. The preprocessed numpy files are:
-    * train_data.npy
-    * train_labels.npy
-    * val_data.npy
-    * val_labels.npy
-    * test_data.npy
-    * test_labels.npy
-## How to run your google colab notebook using data from a shared folder
-1. From Google Drive, click "Shared with me" on the left side.
-1. Right click on "634_Deep_Learning_Project_Shared" and select "Organize" --> "Add shortcut" so that it will be easily accessible from your drive.
-1. Open a notebook with google colab.
-1. Click on the "Files" folder icon on the left side.
-1. Click on the "Mount Drive" icon to connect to google drive. The "634_Deep_Learning_Project_Shared" folder should be there.
-1. Load the dataset from the `/data/preprocessed_data/color_corn/` folder and proceed with model building. See the `Amadeo_Baseline_Corn.ipynb` notebook for example code.
+MSDS 631 Deep Learning, Spring 2024
 
-## Next steps
-Now that we have our preprocessed data and baseline model, we'll need to:
-* Conduct experiments by building more sophisticated deep learning models/architectures
-* **Use class weights passed into the cross entropy loss function when training these models** to address class imbalance. We'll need to do this for all experiments. Here's an example article for how to do this: https://medium.com/@zergtant/use-weighted-loss-function-to-solve-imbalanced-data-classification-problems-749237f38b75
-* **Use F1 score as our primary metric** (because of class imbalance) for selecting our best model. See baseline notebook for example code.
-* Experiment with hyperparameter tuning. Instead of grid search we can use bayesian optimization (much faster).
-* Calculate confidence intervals.
-* Implement early stopping to prevent overfitting.
+Professor: Mustafa Hajij
+
+Team Members: Amadeo Cabanela, Gaurav Goyal, Jiaxuan Ouyang, Liang(Arios) Tong
+
+
+## About this repository:
+* `final_notebook.ipynb` - Comprehensive notebook containing all code and outputs for EDA, preprocessing, model experiments, and final model results.
+* `other_model_notebooks` - Folder containing multiple notebooks containing raw code for model experiments.
+* `webapp` - folder containing files for Streamlit web application
+  * `demo_images` - sample test images to test the webapp
+
+## Streamlit Web Application
+We developed a webapp using Streamlit that allows users to upload leaf images for classification using our final model.
+
+![webapp demo](webapp/webapp_gifs/1_upload_unhealthy.gif)
+
+### Usage
+To demo the webapp yourself, follow these steps:
+1. Clone this github repo.
+1. `cd` into the `webapp` folder
+1. Install the required libraries by running `pip install -r requirements.txt`
+1. We used Python 3.11.3
+1. Run the Streamlit app with the command `streamlit run app.py`
+1. Visit the app in your browser by visiting `http://localhost:8501`
+1. Have fun upload images and exploring information about different disease classes! Sample images are available in the `demo_images` folder.
+
+## Special Thanks
+Thanks to Professor Mustafa Hajij for an interesting and engaging class for deep learning!
