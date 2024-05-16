@@ -9,6 +9,7 @@ Team Members: Amadeo Cabanela, Gaurav Goyal, Jiaxuan Ouyang, Liang(Arios) Tong
 ## About this repository:
 * `final_notebook.ipynb` - Comprehensive notebook containing all code and outputs for EDA, preprocessing, model experiments, and final model results.
 * `other_model_notebooks` - Folder containing multiple notebooks containing raw code for model experiments.
+* `presentation_slides` - PDF file of our slides from our video presentation.
 * `webapp` - folder containing files for Streamlit web application
   * `demo_images` - sample test images to test the webapp
 
