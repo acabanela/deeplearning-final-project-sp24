@@ -13,6 +13,11 @@ Team Members: Amadeo Cabanela, Gaurav Goyal, Jiaxuan Ouyang, Liang(Arios) Tong
 * `webapp` - folder containing files for Streamlit web application
   * `demo_images` - sample test images to test the webapp
 
+## Medium Post
+We wrote a blog post on the Medium platform. You can read it here:
+
+https://medium.com/@acabanela/plant-disease-classification-of-corn-crop-leaves-27d5db52de55
+
 ## Streamlit Web Application
 We developed a webapp using Streamlit that allows users to upload leaf images for classification using our final model.
 
