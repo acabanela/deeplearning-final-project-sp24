@@ -1,5 +1,5 @@
 # Deep Learning Final Project: Plant Disease Image Classification of Corn Crop Leaves
-MSDS 631 Deep Learning, Spring 2024
+MSDS 634 Deep Learning, Spring 2024
 
 Professor: Mustafa Hajij
 
