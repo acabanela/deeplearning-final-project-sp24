@@ -13,6 +13,11 @@ Team Members: Amadeo Cabanela, Gaurav Goyal, Jiaxuan Ouyang, Liang(Arios) Tong
 * `webapp` - folder containing files for Streamlit web application
   * `demo_images` - sample test images to test the webapp
 
+## Video Presentation
+If you'd like to watch a presentation about our project, you can view it here:
+
+https://drive.google.com/file/d/1ZDPxbgVzz_WYlfNYpKys0V5q9VyqaDiu/view?usp=sharing
+
 ## Medium Post
 We wrote a blog post on the Medium platform. You can read it here:
 
